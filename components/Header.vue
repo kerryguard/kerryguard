@@ -1,437 +1,249 @@
 <template>
-  <header class="relative bg-white overflow-hidden">
-    <div class="max-w-screen-xl mx-auto">
+  <header class="py-8 px-4 lg:px-10 bg-white">
+    <nav class="relative flex justify-between items-center">
+      <a class="text-2xl text-gray-900 font-bold" href="#">
+        <img
+          class="h-7"
+          src="zospace-assets/logos/zospace-dark-logo.svg"
+          alt=""
+          width="auto"
+        />
+      </a>
+      <div class="lg:hidden">
+        <button
+          class="
+            navbar-burger
+            flex
+            items-center
+            p-3
+            hover:bg-gray-50
+            text-gray-900
+            rounded
+          "
+        >
+          <svg
+            class="w-10 h-3"
+            width="39"
+            height="13"
+            viewBox="0 0 39 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="39" height="2" rx="1" fill="currentColor"></rect>
+            <rect
+              x="19"
+              y="11"
+              width="20"
+              height="2"
+              rx="1"
+              fill="currentColor"
+            ></rect>
+            <title>Mobile menu</title>
+          </svg>
+        </button>
+      </div>
       <div
         class="
-          relative
-          z-10
-          pb-8
-          bg-white
-          sm:pb-16
-          md:pb-20
-          lg:max-w-2xl lg:w-full lg:pb-28
-          xl:pb-32
+          hidden
+          lg:block
+          absolute
+          top-1/2
+          left-1/2
+          transform
+          -translate-y-1/2 -translate-x-1/2
         "
       >
-        <svg
-          class="
-            hidden
-            lg:block
-            absolute
-            right-0
-            inset-y-0
-            h-full
-            w-48
-            text-white
-            transform
-            translate-x-1/2
-          "
-          fill="currentColor"
-          viewbox="0 0 100 100"
-          preserveaspectratio="none"
-        >
-          <polygon points="50,0 100,0 50,100 0,100"></polygon>
-        </svg>
-        <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
-          <nav
+        <ul class="flex items-center space-x-16 text-lg font-bold">
+          <li><a class="hover:underline" href="#">Product</a></li>
+          <li><a class="hover:underline" href="#">Story</a></li>
+          <li><a class="hover:underline" href="#">Features</a></li>
+          <li><a class="hover:underline" href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="hidden lg:block">
+        <div class="max-w-sm flex items-center bg-blue-50 rounded-full">
+          <input
             class="
-              relative
-              flex
-              items-center
-              justify-between
-              sm:h-10
-              lg:justify-start
+              hidden
+              xl:block
+              pl-6
+              py-5
+              rounded-full
+              bg-transparent
+              placeholder-gray-200
+              font-bold
+              outline-none
+            "
+            type="search"
+            placeholder="Search Now..."
+          />
+          <button
+            class="
+              ml-auto
+              px-4
+              lg:px-10
+              py-5
+              text-white
+              font-bold
+              bg-blue-500
+              hover:bg-blue-600
+              rounded-full
+              transition
+              duration-200
             "
           >
-            <div
-              class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0"
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <div class="flex items-center justify-between w-full md:w-auto">
-                <a href="#" aria-label="Home">
-                  <img
-                    class="h-8 w-auto sm:h-10"
-                    src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
-                    alt=""
-                  />
-                </a>
-                <div class="-mr-2 flex items-center md:hidden">
-                  <button
-                    class="
-                      inline-flex
-                      items-center
-                      justify-center
-                      p-2
-                      rounded-md
-                      text-gray-400
-                      hover:text-gray-500 hover:bg-gray-100
-                      focus:outline-none focus:bg-gray-100 focus:text-gray-500
-                      transition
-                      duration-150
-                      ease-in-out
-                    "
-                    id="main-menu"
-                    type="button"
-                    aria-label="Main menu"
-                    aria-haspopup="true"
-                  >
-                    <svg
-                      class="h-6 w-6"
-                      stroke="currentColor"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h16"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="hidden md:block md:ml-10 md:pr-4">
+              <g clip-path="url(#clip0)">
+                <path
+                  d="M10.5691 0C4.74145 0 0 4.74145 0 10.5691C0 16.3971 4.74145 21.1382 10.5691 21.1382C16.3971 21.1382 21.1382 16.3971 21.1382 10.5691C21.1382 4.74145 16.3971 0 10.5691 0ZM10.5691 19.187C5.81723 19.187 1.95122 15.321 1.95122 10.5691C1.95122 5.81728 5.81723 1.95122 10.5691 1.95122C15.321 1.95122 19.187 5.81723 19.187 10.5691C19.187 15.321 15.321 19.187 10.5691 19.187Z"
+                  fill="white"
+                ></path>
+                <path
+                  d="M23.712 22.3346L18.1185 16.7411C17.7374 16.36 17.1201 16.36 16.739 16.7411C16.3578 17.1219 16.3578 17.7398 16.739 18.1207L22.3325 23.7142C22.523 23.9047 22.7725 24 23.0223 24C23.2717 24 23.5214 23.9047 23.712 23.7142C24.0932 23.3334 24.0932 22.7154 23.712 22.3346Z"
+                  fill="white"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect width="24" height="24" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50"
+    >
+      <div class="navbar-backdrop fixed inset-0 bg-blue-600 opacity-80"></div>
+      <nav
+        class="
+          relative
+          flex flex-col
+          py-8
+          w-full
+          h-full
+          bg-gray-800
+          overflow-y-auto
+        "
+      >
+        <div class="flex items-center mb-16 pr-6">
+          <a class="ml-10 text-2xl text-white font-bold" href="#">
+            <img
+              class="h-7"
+              src="zospace-assets/logos/zospace-logo.svg"
+              alt=""
+              width="auto"
+            />
+          </a>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1 px-10">
               <a
                 class="
-                  font-medium
-                  text-gray-500
-                  hover:text-gray-900
-                  transition
-                  duration-150
-                  ease-in-out
+                  block
+                  pl-8
+                  py-4
+                  text-xl text-white
+                  hover:bg-gray-500
+                  rounded-xl
                 "
                 href="#"
                 >Product</a
-              ><a
+              >
+            </li>
+            <li class="mb-1 px-10">
+              <a
                 class="
-                  ml-8
-                  font-medium
-                  text-gray-500
-                  hover:text-gray-900
-                  transition
-                  duration-150
-                  ease-in-out
+                  block
+                  pl-8
+                  py-4
+                  text-xl text-white
+                  hover:bg-gray-500
+                  rounded-xl
+                "
+                href="#"
+                >Story</a
+              >
+            </li>
+            <li class="mb-1 px-10">
+              <a
+                class="
+                  block
+                  pl-8
+                  py-4
+                  text-xl text-white
+                  hover:bg-gray-500
+                  rounded-xl
                 "
                 href="#"
                 >Features</a
-              ><a
-                class="
-                  ml-8
-                  font-medium
-                  text-gray-500
-                  hover:text-gray-900
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                href="#"
-                >Marketplace</a
-              ><a
-                class="
-                  ml-8
-                  font-medium
-                  text-gray-500
-                  hover:text-gray-900
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                href="#"
-                >Company</a
-              ><a
-                class="
-                  ml-8
-                  font-medium
-                  text-indigo-600
-                  hover:text-indigo-900
-                  transition
-                  duration-150
-                  ease-in-out
-                "
-                href="#"
-                >Log in</a
               >
-            </div>
-          </nav>
+            </li>
+            <li class="mb-1 px-10">
+              <a
+                class="
+                  block
+                  pl-8
+                  py-4
+                  text-xl text-white
+                  hover:bg-gray-500
+                  rounded-xl
+                "
+                href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
         </div>
-        <div
-          class="
-            hidden
-            absolute
-            top-0
-            inset-x-0
-            p-2
-            transition
-            transform
-            origin-top-right
-          "
-        >
-          <div class="rounded-lg shadow-md">
-            <div
-              class="rounded-lg bg-white shadow-xs overflow-hidden"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="main-menu"
+        <div class="mt-auto px-10">
+          <div class="pt-6">
+            <a
+              class="
+                block
+                mb-4
+                py-4
+                px-12
+                text-white text-center
+                font-bold
+                hover:bg-white hover:text-gray-800
+                border border-gray-50
+                rounded-full
+                transition
+                duration-200
+              "
+              href="#"
+              >Sign in</a
+            ><a
+              class="
+                block
+                py-4
+                px-12
+                text-white text-center
+                font-bold
+                bg-blue-500
+                hover:bg-blue-600
+                rounded-full
+                transition
+                duration-200
+              "
+              href="#"
+              >Sign up</a
             >
-              <div class="px-5 pt-4 flex items-center justify-between">
-                <div>
-                  <img
-                    class="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/v1/workflow-mark-on-white.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="-mr-2">
-                  <button
-                    class="
-                      inline-flex
-                      items-center
-                      justify-center
-                      p-2
-                      rounded-md
-                      text-gray-400
-                      hover:text-gray-500 hover:bg-gray-100
-                      focus:outline-none focus:bg-gray-100 focus:text-gray-500
-                      transition
-                      duration-150
-                      ease-in-out
-                    "
-                    type="button"
-                    aria-label="Close menu"
-                  >
-                    <svg
-                      class="h-6 w-6"
-                      stroke="currentColor"
-                      fill="none"
-                      viewbox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="px-2 pt-2 pb-3">
-                <a
-                  class="
-                    block
-                    px-3
-                    py-2
-                    rounded-md
-                    text-base
-                    font-medium
-                    text-gray-700
-                    hover:text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:text-gray-900 focus:bg-gray-50
-                    transition
-                    duration-150
-                    ease-in-out
-                  "
-                  href="#"
-                  role="menuitem"
-                  >Product</a
-                ><a
-                  class="
-                    mt-1
-                    block
-                    px-3
-                    py-2
-                    rounded-md
-                    text-base
-                    font-medium
-                    text-gray-700
-                    hover:text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:text-gray-900 focus:bg-gray-50
-                    transition
-                    duration-150
-                    ease-in-out
-                  "
-                  href="#"
-                  role="menuitem"
-                  >Features</a
-                ><a
-                  class="
-                    mt-1
-                    block
-                    px-3
-                    py-2
-                    rounded-md
-                    text-base
-                    font-medium
-                    text-gray-700
-                    hover:text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:text-gray-900 focus:bg-gray-50
-                    transition
-                    duration-150
-                    ease-in-out
-                  "
-                  href="#"
-                  role="menuitem"
-                  >Marketplace</a
-                ><a
-                  class="
-                    mt-1
-                    block
-                    px-3
-                    py-2
-                    rounded-md
-                    text-base
-                    font-medium
-                    text-gray-700
-                    hover:text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:text-gray-900 focus:bg-gray-50
-                    transition
-                    duration-150
-                    ease-in-out
-                  "
-                  href="#"
-                  role="menuitem"
-                  >Company</a
-                >
-              </div>
-              <div>
-                <a
-                  class="
-                    block
-                    w-full
-                    px-5
-                    py-3
-                    text-center
-                    font-medium
-                    text-indigo-600
-                    bg-gray-50
-                    hover:bg-gray-100 hover:text-indigo-700
-                    focus:outline-none focus:bg-gray-100 focus:text-indigo-700
-                    transition
-                    duration-150
-                    ease-in-out
-                  "
-                  href="#"
-                  role="menuitem"
-                  >Log in</a
-                >
-              </div>
-            </div>
           </div>
+          <p class="mt-6 mb-4 text-lg text-center text-white">
+            <span>2021 © Zospace. All rights reserved.</span>
+          </p>
         </div>
-        <main
-          class="
-            mt-10
-            mx-auto
-            max-w-screen-xl
-            px-4
-            sm:mt-12 sm:px-6
-            md:mt-16
-            lg:mt-20 lg:px-8
-            xl:mt-28
-          "
-        >
-          <div class="sm:text-center lg:text-left">
-            <h2
-              class="
-                text-4xl
-                tracking-tight
-                leading-10
-                font-extrabold
-                text-gray-900
-                sm:text-5xl sm:leading-none
-                md:text-6xl
-              "
-            >
-              <span class="mr-1">Data to enrich your</span>
-              <br class="xl:hidden" />
-              <span class="text-indigo-600">online business</span>
-            </h2>
-            <p
-              class="
-                mt-3
-                text-base text-gray-500
-                sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto
-                md:mt-5 md:text-xl
-                lg:mx-0
-              "
-            >
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-              fugiat aliqua.
-            </p>
-            <div
-              class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
-            >
-              <div class="rounded-md shadow">
-                <a
-                  class="
-                    w-full
-                    flex
-                    items-center
-                    justify-center
-                    px-8
-                    py-3
-                    border border-transparent
-                    text-base
-                    leading-6
-                    font-medium
-                    rounded-md
-                    text-white
-                    bg-indigo-600
-                    hover:bg-indigo-500
-                    focus:outline-none
-                    focus:border-indigo-700
-                    focus:shadow-outline-indigo
-                    transition
-                    duration-150
-                    ease-in-out
-                    md:py-4 md:text-lg md:px-10
-                  "
-                  href="#"
-                  >Get started</a
-                >
-              </div>
-              <div class="mt-3 sm:mt-0 sm:ml-3">
-                <a
-                  class="
-                    w-full
-                    flex
-                    items-center
-                    justify-center
-                    px-8
-                    py-3
-                    border border-transparent
-                    text-base
-                    leading-6
-                    font-medium
-                    rounded-md
-                    text-indigo-700
-                    bg-indigo-100
-                    hover:text-indigo-600 hover:bg-indigo-50
-                    focus:outline-none
-                    focus:shadow-outline-indigo
-                    focus:border-indigo-300
-                    transition
-                    duration-150
-                    ease-in-out
-                    md:py-4 md:text-lg md:px-10
-                  "
-                  href="#"
-                  >Live demo</a
-                >
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
-    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      <img
-        class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2850&amp;q=80"
-        alt=""
-      />
+      </nav>
     </div>
   </header>
 </template>
