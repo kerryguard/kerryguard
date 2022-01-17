@@ -1,4 +1,4 @@
-import { readingTime, createSitemapRoutes, createBlogFeed, blogUrl } from './functions/content.js';
+import { readingTime, createSitemapRoutes, createBlogFeed } from './functions/content.js';
 
 export default {
     target: 'static',
@@ -48,8 +48,6 @@ export default {
             if (document.extension === '.md') {
                 if (document.text && !document.minutes)
                     document.minutes = readingTime(document.text)
-                if (document.path && document.path.includes('blog/'))
-                    document.url = blogUrl(document.path);
                 if (document.date)
                     document.dateFormatted = formatDate(document.date);
                 if (document.updated)

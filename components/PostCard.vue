@@ -1,13 +1,12 @@
 <template>
-  <div class="w-full md:w-1/2 lg:w-1/4 p-5">
+  <nuxt-link v-bind:to="post.path" class="w-full md:w-1/2 lg:w-1/4 p-5">
     <div class="relative h-52">
-      <nuxt-link v-bind:to="post.path">
-        <img
-          class="w-full h-full object-cover object-top"
-          v-bind:src="post.images.small"
-          v-bind:alt="post.images.alt"
-        />
-      </nuxt-link>
+      <img
+        v-if="post.images"
+        class="w-full h-full object-cover object-top"
+        v-bind:src="post.images.small"
+        v-bind:alt="post.images.alt"
+      />
       <div
         class="
           absolute
@@ -35,7 +34,7 @@
       </div>
     </div>
     <div class="pt-10 pb-14 px-5 bg-white rounded-b-lg">
-      <a
+      <span
         v-for="category in post.categories"
         v-bind:key="category"
         class="
@@ -48,19 +47,16 @@
           rounded-xl
           bg-blue-500
         "
-        href="#"
-        >{{ category }}</a
+        >{{ category }}</span
       >
-      <a href="#">
-        <h3 class="mb-4 text-2xl font-bold">
-          {{ post.title }}
-        </h3>
-        <p class="text-lg text-gray-300">
-          {{ post.description }}
-        </p>
-      </a>
+      <h3 class="mb-4 text-2xl font-bold">
+        {{ post.title }}
+      </h3>
+      <p class="text-lg text-gray-300">
+        {{ post.description }}
+      </p>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 <script>
 export default {

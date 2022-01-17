@@ -1,11 +1,11 @@
 <template>
   <header class="py-8 px-4 lg:px-10 bg-white">
     <nav class="relative flex justify-between items-center">
-      <a class="text-2xl text-gray-900 font-bold" href="#">
+      <a class="text-2xl text-gray-900 font-bold" href="/">
         <img
           class="h-7"
-          src="zospace-assets/logos/zospace-dark-logo.svg"
-          alt=""
+          src="/zospace-assets/logos/zospace-dark-logo.svg"
+          alt="Kerry Guard"
           width="auto"
         />
       </a>
@@ -138,7 +138,7 @@
           <a class="ml-10 text-2xl text-white font-bold" href="#">
             <img
               class="h-7"
-              src="zospace-assets/logos/zospace-logo.svg"
+              src="/zospace-assets/logos/zospace-logo.svg"
               alt=""
               width="auto"
             />

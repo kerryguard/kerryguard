@@ -1,13 +1,7 @@
 <template>
   <main>
-    <Post :article="article" />
-    <Comments
-      :comments="comments"
-      :pageSlug="pageSlug"
-      :closed="article.commenting == 'closed'"
-      siteUrl="https://kerryguard.com"
-      postAuthorEmail="kerryguard@gmail.com"
-    />
+    <Page :page="page" />
+    <LatestPosts />
   </main>
 </template>
 
@@ -16,37 +10,26 @@ import { createHead } from "~/functions/page.js";
 
 export default {
   head() {
-    return createHead({ article: this.article, $route: this.$route });
+    return createHead({ article: this.page, $route: this.$route });
   },
 
   async asyncData({ $content, params, error }) {
     const contentPath = params.pathMatch.endsWith("/")
       ? params.pathMatch + "index"
       : params.pathMatch;
-
-    let article;
+    let page;
     try {
-      article = await $content(contentPath).fetch();
+      page = await $content(contentPath).fetch();
     } catch {}
-
     try {
-      if (article == null || Array.isArray(article))
-        article = await $content(params.pathMatch + "/index").fetch();
+      if (page == null || Array.isArray(page))
+        page = await $content(params.pathMatch + "/index").fetch();
     } catch {
-      error({ statusCode: 404, message: "Post not found" });
+      error({ statusCode: 404, message: "Page not found" });
     }
 
-    let comments = [];
-    try {
-      comments = await $content("comments/" + params.pathMatch)
-        .sortBy("date", "asc")
-        .fetch();
-    } catch {}
-
     return {
-      article,
-      comments,
-      pageSlug: params.pathMatch,
+      page,
     };
   },
 };

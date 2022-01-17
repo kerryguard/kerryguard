@@ -6,23 +6,10 @@ export const createSitemapRoutes = async () => {
     const articles = await $content({ deep: true }).where({ hidden: { $ne: true } }).only(['path', 'date', 'updated']).fetch();
     for (const article of articles) {
         if (!article.path.startsWith('/comments/')) {
-            let url = article.path.startsWith('/blog/') ? siteUrl + blogUrl(article.path) : article.url ?? article.path;
-            if (url.endsWith('/index'))
-                url = url.substr(url, url.length - 5);
-            routes.push({ url: url, lastmod: article.updated || article.date });
+            routes.push({ url: article.path, lastmod: article.updated || article.date });
         }
     }
     return routes;
-}
-
-export const blogUrl = (value) => {
-    const parts = value.split('/')
-    const slug = parts.pop()
-    const slugParts = slug.split('-')
-    parts.push(slugParts[1])
-    parts.push(slugParts[2])
-    parts.push(slug.substr(11))
-    return parts.join('/')
 }
 
 export const readingTime = (text) =>
@@ -50,7 +37,7 @@ export const createBlogFeed = async (feed) => {
         feed.addItem({
             title: post.title,
             id: post.slug.substr(11),
-            link: siteUrl + blogUrl(post.path),
+            link: siteUrl + post.path,
             description: post.description,
             date: new Date(post.date),
             content: createHtml(post.body),

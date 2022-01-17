@@ -82,37 +82,22 @@
               <h3
                 class="mb-8 lg:mb-14 text-xl font-bold font-heading text-white"
               >
-                Your Account
+                Site
               </h3>
               <ul class="text-lg">
-                <li class="mb-5">
-                  <a class="text-gray-200 hover:text-gray-100" href="#"
-                    >New account</a
-                  >
-                </li>
-                <li class="mb-5">
-                  <a class="text-gray-200 hover:text-gray-100" href="#"
-                    >Log in</a
-                  >
-                </li>
-                <li class="mb-5">
-                  <a class="text-gray-200 hover:text-gray-100" href="#"
-                    >Testimonials</a
-                  >
-                </li>
                 <li class="mb-5">
                   <a class="text-gray-200 hover:text-gray-100" href="#"
                     >Contact</a
                   >
                 </li>
                 <li class="mb-5">
-                  <a class="text-gray-200 hover:text-gray-100" href="#"
+                  <a class="text-gray-200 hover:text-gray-100" href="/privacy"
                     >Privacy Policy</a
                   >
                 </li>
                 <li>
-                  <a class="text-gray-200 hover:text-gray-100" href="#"
-                    >Cookies</a
+                  <a class="text-gray-200 hover:text-gray-100" href="/terms"
+                    >Terms</a
                   >
                 </li>
               </ul>
@@ -183,7 +168,7 @@
             <a class="inline-block text-white text-xl font-bold" href="#">
               <img
                 class="h-7"
-                src="zospace-assets/logos/zospace-logo.svg"
+                src="/zospace-assets/logos/zospace-logo.svg"
                 alt=""
                 width="auto"
               />
@@ -192,27 +177,33 @@
               class="hidden md:inline-block mx-8 w-px h-8 bg-gray-500"
             ></span>
             <p class="hidden lg:block text-sm text-white">
-              <span>© 2021 Shuffle.</span>
+              <span>© 2022 Kerry Guard.</span>
               <span class="text-gray-200">All rights reserved.</span>
             </p>
           </div>
         </div>
         <div class="w-full md:w-1/2">
           <div class="md:flex items-center justify-end">
-            <a class="inline-block mr-2" href="#">
-              <img src="zospace-assets/logos/facebook.svg" alt="" />
+            <a
+              class="inline-block mr-2"
+              href="https://linkedin.com/in/kerryguard"
+            >
+              <img src="/zospace-assets/logos/linkedin.svg" alt="" />
             </a>
-            <a class="inline-block mr-2" href="#">
-              <img src="zospace-assets/logos/instagram.svg" alt="" />
+            <a
+              class="inline-block mr-2"
+              href="https://www.instagram.com/kerryguard/"
+            >
+              <img src="/zospace-assets/logos/instagram.svg" alt="" />
             </a>
-            <a class="inline-block" href="#">
-              <img src="zospace-assets/logos/twitter.svg" alt="" />
+            <a class="inline-block" href="https://twitter.com/kerryguard">
+              <img src="/zospace-assets/logos/twitter.svg" alt="" />
             </a>
           </div>
         </div>
       </div>
       <p class="lg:hidden text-sm text-white">
-        <span>© 2021 Shuffle.</span>
+        <span>© 2022 Kerry Guard.</span>
         <span class="text-gray-200">All rights reserved.</span>
       </p>
     </div>

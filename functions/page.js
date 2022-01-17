@@ -1,4 +1,4 @@
-export const createHead = ({ article, title, description, image, $route, fulltitle, structuredOrg }) => {
+export const createHead = ({ article, title, description, image, $route, fulltitle }) => {
     title = title || (article && (article.seotitle || article.title))
     description = description || (article && (article.seodescription || article.description))
     const creator = article && article.authors && article.authors[0] && article.authors[0].twitter
@@ -35,22 +35,10 @@ const dateOptions = {
     year: 'numeric'
 }
 
-export const blogUrl = (value) => {
-    const parts = value.split('/')
-    const slug = parts.pop()
-    const slugParts = slug.split('-')
-    parts.push(slugParts[1])
-    parts.push(slugParts[2])
-    parts.push(slug.substr(11))
-    return parts.join('/')
-}
-
-export const titleCase = (value) => value.split(' ').map(v => v[0].toUpperCase() + v.substr(1).toLowerCase()).join(' ')
-
 export const formatDate = (date) =>
     new Date(date).toLocaleDateString("en-gb", dateOptions)
 
-export const createMeta = (title, description, image, url, creator) => {
+export const createMeta = (title, description, image, url) => {
     const meta = [
         { hid: 'og:title', property: 'og:title', content: title },
         {
@@ -78,10 +66,6 @@ export const createMeta = (title, description, image, url, creator) => {
                 content: description
             },
             { hid: 'twitter:description', name: 'twitter:description', content: description })
-    }
-
-    if (creator) {
-        meta.push({ hid: 'og:creator', property: 'og:creator', content: '@' + creator })
     }
 
     if (image) {

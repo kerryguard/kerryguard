@@ -36,11 +36,12 @@
 export default {
   data() {
     return {
-      posts: [{}, {}, {}, {}],
+      posts: [],
     };
   },
 
   async fetch() {
+    console.log("running fetch");
     const source = this.$content("blog", { deep: true });
     const posts = await source.sortBy("date", "desc").limit(4).fetch();
     this.posts = posts;
